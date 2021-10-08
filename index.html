@@ -28,7 +28,7 @@
         console.log(link);
         var href_link=link.getAttribute("href");
         console.log(href_link);
-        href_link.replace("{params}",getQueryStrings()+"/");
+        href_link=href_link.replace("{params}",getQueryStrings()+"/");
         console.log(href_link);
         link.setAttribute("href",href_link);
         console.log(link);
