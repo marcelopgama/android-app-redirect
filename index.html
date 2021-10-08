@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <title>Redirect Page</title>
     
-     <script>
+     <script type="text/javascript">
         function getQueryStrings() 
         { 
            var url_string=window.location.search;
@@ -23,7 +23,7 @@
    <a id="redirect_link" href="intent://callback/oauth/{params}#Intent;scheme=facebook-test;package=com.companyname.test;end;">Go back to application</a> 
 </body>
     
-    <script>
+    <script type="text/javascript">
         var link=document.getElementById("redirect_link");
         var href_link=link.getAttribute("href");
         href_link.replace("{params}",getQueryString()+"/");    
