@@ -11,13 +11,15 @@
 </head>
 <body style="text-align:center">
    <h1>Sucess!</h1>
-   <a id="redirect_link" href="intent://#Intent;scheme=facebook-test;package=com.companyname.test;end;">Go back to application</a> 
+   <a id="redirect_link" href="intent://#Intent;scheme=facebook-test;package=com.companyname.test;S.token={token};end;">Go back to application</a> 
 </body>
     
     <script type="text/javascript">
         var link=document.getElementById("redirect_link");        
-        var href_link=link.getAttribute("href");        
-        href_link=href_link.replace("{redirect_string}",window.location.href);       
+        var href_link=link.getAttribute("href");
+        var url=window.location.href;
+        var token=url.split('?');
+        href_link=href_link.replace("{token}",token);       
         link.setAttribute("href",href_link);         
     </script> 
     
