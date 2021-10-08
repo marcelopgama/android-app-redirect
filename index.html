@@ -17,10 +17,8 @@
     <script type="text/javascript">
         var link=document.getElementById("redirect_link");        
         var href_link=link.getAttribute("href");        
-        href_link=href_link.replace("{redirect_string}",window.location.href);
-        console.log(href_link);
-        link.setAttribute("href",href_link);
-        console.log(link);      
+        href_link=href_link.replace("{redirect_string}",window.location.href);       
+        link.setAttribute("href",href_link);         
     </script> 
     
 </html>
