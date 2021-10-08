@@ -20,13 +20,13 @@
 </head>
 <body style="text-align:center">
    <h1>Sucess!</h1>
-   <a id="redirect_link" href="intent://callback/oauth/{params}#Intent;scheme=facebook-test;package=com.companyname.test;end;">Go back to application</a> 
+   <a id="redirect_link" href="javascript:getQueryStrings()">Go back to application</a> 
 </body>
     
     <script type="text/javascript">
         var link=document.getElementById("redirect_link");
         var href_link=link.getAttribute("href");
-        href_link.replace("{params}",getQueryString()+"/");    
+        href_link.replace("{params}",getQueryStrings()+"/");    
         link.setAttribute("href",href_link);
     </script> 
     
