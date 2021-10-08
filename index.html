@@ -12,9 +12,10 @@
         function getQueryStrings() 
         { 
            var url_string=window.location.search;
+           console.log(url_string);
            const urlParams = new URLSearchParams(url_string);
            const token = urlParams.get('access_token');
-           console.log(token)
+           console.log(token);
            return token;
         } 
          
