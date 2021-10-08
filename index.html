@@ -13,7 +13,7 @@
         { 
            var url_string=window.location.href;           
            const urlParams = new URLSearchParams(url_string);
-            console.log(urlParams);
+            console.log(urlParams.getAll());
            const token = urlParams.get('#access_token');
            console.log(token);
            return token;
