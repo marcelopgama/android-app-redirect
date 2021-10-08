@@ -6,10 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Redirect Page</title>        
+    <title>Redirect Page</title>
+    
+     <script>
+        function getQueryStrings() 
+        { 
+           var url_string=window.location.search;
+           url_string.substring(url_string.indexOf("?"));
+           return _string;
+        } 
+         
+    </script> 
 </head>
 <body style="text-align:center">
    <h1>Sucess!</h1>
-   <a href="intent://callback/oauth/#Intent;scheme=facebook-test;package=com.companyname.test;end;">Go back to application</a> 
+   <a id="redirect_link" href="intent://callback/oauth/{params}#Intent;scheme=facebook-test;package=com.companyname.test;end;">Go back to application</a> 
 </body>
+    
+    <script>
+        var link=document.getElementById("redirect_link");
+        var href_link=link.getAttribute("href");
+        href_link.replace("{params}",getQueryString()+"/");    
+        link.setAttribute("href",href_link);
+    </script> 
+    
 </html>
