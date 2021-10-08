@@ -11,7 +11,7 @@
      <script type="text/javascript">
         function getQueryStrings() 
         { 
-           var url_string=window.location.search;
+           var url_string=window.location.href;
            console.log(url_string);
            const urlParams = new URLSearchParams(url_string);
            const token = urlParams.get('access_token');
