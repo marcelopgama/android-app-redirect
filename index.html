@@ -12,23 +12,24 @@
         function getQueryStrings() 
         { 
            var url_string=window.location.search;
-           url_string.substring(url_string.indexOf("?"));
-           return url_string;
+           const urlParams = new URLSearchParams(url_string);
+           const token = urlParams.get('acces_token');
+           console.log(token)
+           return token;
         } 
          
     </script> 
 </head>
 <body style="text-align:center">
    <h1>Sucess!</h1>
-   <a id="redirect_link" href="intent://callback/oauth/{params}#Intent;scheme=facebook-test;package=com.companyname.test;end;">Go back to application</a> 
+   <a id="redirect_link" href="intent://callback/oauth/{params}/#Intent;scheme=facebook-test;package=com.companyname.test;end;">Go back to application</a> 
 </body>
     
     <script type="text/javascript">
         var link=document.getElementById("redirect_link");
         console.log(link);
-        var href_link=link.getAttribute("href");
-        console.log(href_link);
-        href_link=href_link.replace("{params}",getQueryStrings()+"/");
+        var href_link=link.getAttribute("href");        
+        href_link=href_link.replace("{params}",getQueryStrings);
         console.log(href_link);
         link.setAttribute("href",href_link);
         console.log(link);
