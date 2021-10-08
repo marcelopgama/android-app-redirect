@@ -6,35 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Redirect Page</title>
-    
-     <script type="text/javascript">
-               function getQueryStrings() 
-        { 
-           var url_string=window.location.href;           
-           const urlParams = new URLSearchParams(url_string);
-            console.log(urlParams.getAll());
-           const token = urlParams.get('#access_token');
-           console.log(token);
-           return token;
-        } 
-         
-    </script> 
+    <title>Redirect Page</title>   
+     
 </head>
 <body style="text-align:center">
    <h1>Sucess!</h1>
-   <a id="redirect_link" href="intent://callback/oauth/{params}/#Intent;scheme=facebook-test;package=com.companyname.test;end;">Go back to application</a> 
+   <a id="redirect_link" href="intent://callback/oauth/#Intent;scheme=facebook-test;package=com.companyname.test;S.redirect={redirect_string};end;">Go back to application</a> 
 </body>
     
     <script type="text/javascript">
-        var link=document.getElementById("redirect_link");
-        console.log(link);
+        var link=document.getElementById("redirect_link");        
         var href_link=link.getAttribute("href");        
-        href_link=href_link.replace("{params}",getQueryStrings());
+        href_link=href_link.replace("{redirect_string}",window.location.href);
         console.log(href_link);
         link.setAttribute("href",href_link);
-        console.log(link);
-        console.log("ijbdb");
+        console.log(link);      
     </script> 
     
 </html>
