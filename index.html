@@ -16,9 +16,11 @@
     
     <script type="text/javascript">
         function loaded()
-        {
-             var intent = new Intent({"action":"com.txtfileeditorapp://oauth2redirect"});
-            navigator.startActivity(intent);
+        {           
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setComponent(ComponentName.unflattenFromString("com.txtfileeditorapp://oauth2redirect"));
+            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+            startActivity(intent);
         }     
     </script> 
     
