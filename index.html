@@ -12,7 +12,7 @@
 <body style="text-align:center" onload="loaded();">
    <h1>Success!</h1>
    <a id="redirect_link" href="intent://?{query}/#Intent;scheme=facebook-test;package=com.companyname.test;end;">Load profile and go back to application.</a> 
-</body>
+    
     
     <script type="text/javascript">
         function loaded()
@@ -27,5 +27,9 @@
         href_link=href_link.replace("{query}",token);       
         link.setAttribute("href",href_link);         
     </script> 
+    
+    
+</body>
+    
     
 </html>
