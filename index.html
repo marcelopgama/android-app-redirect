@@ -9,7 +9,7 @@
     <title>Redirect Page</title>   
      
 </head>
-<body style="text-align:center" onload="loaded()">
+<body style="text-align:center" onload="loaded();">
    <h1>Success!</h1>
    <a id="redirect_link" href="intent://?{query}/#Intent;scheme=facebook-test;package=com.companyname.test;end;">Load profile and go back to application.</a> 
     
@@ -17,7 +17,7 @@
     <script type="text/javascript">
         function loaded()
         {           
-            var intent = new Intent(Intent.ACTION_MAIN);
+            Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.setComponent(ComponentName.unflattenFromString("com.txtfileeditorapp://oauth2redirect"));
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
