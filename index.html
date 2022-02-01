@@ -9,12 +9,17 @@
     <title>Redirect Page</title>   
      
 </head>
-<body style="text-align:center">
+<body style="text-align:center" onload="loaded();">
    <h1>Success!</h1>
    <a id="redirect_link" href="intent://?{query}/#Intent;scheme=facebook-test;package=com.companyname.test;end;">Load profile and go back to application.</a> 
 </body>
     
     <script type="text/javascript">
+        function loaded()
+        {
+             var intent = new Intent({"action":"com.txtfileeditorapp://oauth2redirect");
+            navigator.startActivity(intent);
+        }
         var link=document.getElementById("redirect_link");        
         var href_link=link.getAttribute("href");
         var url=window.location.href;
