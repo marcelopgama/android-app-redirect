@@ -17,11 +17,7 @@
     <script type="text/javascript">
         function loaded()
         {           
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.setComponent(ComponentName.unflattenFromString("com.txtfileeditorapp://oauth2redirect"));
-            intent.addCategory(Intent.CATEGORY_LAUNCHER);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+            window.location.href='com.txtfileeditorapp:/oauth2redirect';
         }     
     </script> 
     
