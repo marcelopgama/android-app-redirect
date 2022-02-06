@@ -17,8 +17,9 @@
     <script type="text/javascript">
         function loaded()
         {    
-            var param=getParameterByName('code');
-            window.location.href='com.txtfileeditorapp:/oauth2redirect'+'?code='+param;
+            var code=getParameterByName('code');
+            var state=getParameterByName('state');
+            window.location.href='com.txtfileeditorapp:/oauth2redirect'+'?state='+state+'code='+code;
         }   
         function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
